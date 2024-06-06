@@ -25,14 +25,14 @@ function getIssueDataAndWriteToClipboard(issueId)
     const issueKey = data['key'];
     const issueTitle = data['fields']['summary'];
     const issueDescription = data['fields']['description'];
-    const issueType = data['fields']['issuetype'].name;
+    const issueType = data['fields']['issuetype'].name == 'Bug' ? 'bug' : 'mod';
     const issuePriority = data['fields']['priority']?.name;
     const issueStatus = data['fields']['status'].name;
     const issueReporter = data['fields']['reporter'].displayName;
     const issueAssignee = data['fields']['assignee'] ? data['fields']['assignee'].displayName : 'Unassigned';
 
     storageGet('format').then(function (storageData) {
-      const format = storageData.format || 'mod ({key}): {title}';
+      const format = storageData.format || '{type} ({key}): {title}';
       const outputText = format
         .replaceAll('{key}', issueKey)
         .replaceAll('{title}', issueTitle)
