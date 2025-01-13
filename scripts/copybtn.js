@@ -80,7 +80,7 @@ var buttonIDJiraSnippet = 'CopyBtnJiraSnippet';
 var buttonIDCopyID = 'CopyBtnJiraId';
 
 var observer = new MutationObserver(function (mutations, me) {
-    var parentJiraButton = document.getElementsByClassName('_otyr1b66 _1yt4swc3 _1e0c116y')[0];
+    var parentJiraButton = document.getElementsByClassName('_otyr1b66 _19pk1b66 _ca0q1b66 _u5f3idpf _n3td1b66 _19bvidpf _1e0c116y')[0];
     var parentCopyIDButton = parentJiraButton;
 
     if (parentJiraButton) {
